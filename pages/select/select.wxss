@@ -1,0 +1,103 @@
+/*搜索  */
+.weui_select{
+  width:1.5rem;
+  height:1.5rem;
+  display:inline-block;
+  position:absolute;
+  left:0;
+  top:0;
+}
+.selectResult{
+  width:100%;
+  height:100%;
+}
+.selectItem{
+  width:100%;
+  height: 3rem;
+  font-size:0.7rem;
+  position: relative;
+border-bottom: 1px solid #e5e5e5;
+text-align:left;
+color:#808080;
+}
+.selectItem image{
+  width:1.2rem;
+  height: 1.2rem;
+  float: left;
+  margin:0.9rem; 
+}
+.selectItem text{
+  display:block;
+  height:1.5rem;
+  line-height: 2.2rem;
+  color:#333;
+  font-size:0.8rem;
+}
+/*搜索结果MV  */
+.selectMvItem{
+  height:4rem;
+}
+.selectMvItem image{
+  width:3rem;
+  height: 3rem;
+  margin:0.5rem;
+}
+.selectMvItem .mvplay{
+  width:1.5rem;
+  height:1.5rem;
+   position: absolute;
+  right:1rem; 
+  top:0.8rem;
+}
+.selectMvItem text{
+  height:2.1rem;
+  line-height: 3rem;
+  font-size:0.9rem;
+}
+/*input  */
+.weui-search-bar__input{
+  text-align: left;
+  color:rgba(0,0,0,.5);
+}
+.placeholder{
+  color:rgba(0,0,0,.5);
+}
+/*navbar color  */
+.weui-navbar__item{
+  color:rgba(0,0,0,.6)
+}
+/*没有结果  */
+.noReault{
+  text-align: center;
+  padding-top:5rem;
+}
+.noReault image{
+  width:5rem;
+  height: 5rem;
+}
+.noReault view{
+  font-size:0.7rem;
+  color:rgba(0, 0, 0, .5);
+  margin-top:0.5rem;
+}
+.noReault .no_result{
+  font-size:0.9rem;
+}
+/* 取消 --->样式 */
+.weui-search-bar__cancel-btn{
+  font-size:0.7rem;
+  color:rgba(0,0,0,0.8);
+}
+
+/*hotSelect  */
+.hotSelect{
+  text-align: left;
+  padding:0.5rem;
+}
+.hotSelect .mini-btn{
+  border-radius:30px;
+  margin-right:1rem;
+}
+.hotSelect button[type="default"][plain]{
+  border: 1px solid #ffb105;
+}

@@ -1,0 +1,23 @@
+<!--pages/changeSkin/changeSkin.wxml-->
+<!--个性换肤  -->
+<view class='page'>
+  <!--内容  -->
+  <view class='page__cd'>
+    <!--头部  -->
+    <view class='page__hd'>
+      <text class='page__span'></text> 个性换肤
+    </view>
+    <!--皮肤列表  -->
+    <view class='skin_list'>
+      <view class='skin-item' wx:for='{{arr}}' wx:key='item.class' bindtap='skinSelect'>
+        <view class='{{item.class}}' id='{{item.class}}={{item.bgColor}}'>
+          <image wx:if="{{currentItem==item.class ? true :false}}" class='useing' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpDQTU2NTg0MTBFNDhFNjExQjRGQ0IyQUI0MUYzQkE2QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MEY1NDI3NDk4RkMxMUU3QTA4OERDQjNBRTYxNzIxQSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MEY1NDI3Mzk4RkMxMUU3QTA4OERDQjNBRTYxNzIxQSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6N2MxM2U1MzUtMGFmNC1lNTQ3LThkMjAtYjdhNTQ3NWIzMmNmIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkNBNTY1ODQxMEU0OEU2MTFCNEZDQjJBQjQxRjNCQTZCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+5usZbAAABHlJREFUeNrEmllIFlEUgOfXSa20zUyTSFoVbTMJWmyxMIoCW7Ckop7sIXqInoqegxYoiCCql6Ke2iizBdtssYxspzJa3FptMbdMU//OoSP8jffM3Jm5Mx34KJw7c++5y9nuHwgGg5pCGQTEEdFAFP29DWgBvgBfgY9Ah4oOdQXfmACMAYYDsZLvNAKVwDOgDPjttPOAwxXoAWQCU4B4lxPQSEpcB+r8UGAmkA3EaGqlE7gBXAB+eaHAEGA5MFTzVnBFTgEPVCowA1jqYDB4cLGDSCDc5rslwDEVCiwGZkl0WAu8AqrIyjQYFIghK4UrOBJIkvgmHvIDbhTIAhZZdIJLXQq8tDnDicBUYDIZBU7uAUedKGA183eBIrLrbqQ3KbLQpM0bYI8dBaYBy5iPoc0+AjxWfHgHA2voX5E8BA4Z/xjGeFNu8PXANg8Gr9G52Q6UM8/Tye9YKpDPfAAP5Q4FW8ZMcDvsA54zz/Noy7EKZNIKiD68C2jS/JH9wAfm2UpOAfx/DvPSQSdu3qXspSDQKGlkwbopMB2IELxwn+yx39IMnGOe5YgUmMM0PiHRGTqpBA+UKGEi1RSgf6gCGA73FTR8CvyU6CgX2AxsElkKF4KDL2CezQ5VYCLT6JKN8LrLlqOl2KJQkZvMKowPVWCUoEEdxTWyM2X0JXm0IskKTKvI7+COiUcFBgJ9mEBKhXddR7hRhPMLw3QT1/1W4V5OJjDgu+Ig8KvkcnDdJI/97IFVcarIN0p0jFlgT53ZPkEKHbySLkVwa5wBPkm8UydQIEJnnFcr4bWkEuUU8zdaZHdGCQ8zSbCDmn8yWqLEIxpPAF9qFzyIpJVp8yFcOAvckWgbKfhbh85EmJiAR3sYfbZQHeiajRKKKFJo002izDjJw+Vk4MXMnuYEJ3OA6KzqJoNMolhI1cCLafAtDt7nalHfdUrlWgV7DOPuQgWDv+hgxkVmVyRVOlmcCgpRjWWPfsAPiQ7CmKrFZaoXuRVRsIkGploPqe2kCBrNlamOhaweKvuCZlzV+RnLONsnOPl6SPEoV1BgwvLKcQmfUEAJTZkH/oOrkFwNXXrcRreZhtkSndTQJKgefBoz+7i67417t4j5yALGhPkhS0xWvNvha6LsRyTr/8PgV1GuYpTa0FzFaD1OM+lbLCUlfsl8YBLz7LCZ+Ws3NjDY4rU+DX4e8+wW8M7KfqP3LTU5VBu7ShoeyAqTwdeSRfw3HDUpr+dTuUVjnEghmc1mBQNPp4EnmGRku0X5gtUFx2ogwyLGOU8m1EmokEFbJs6kDaa2O5mzKXXFtAGzf4s2rVT6wBy3Wvt7oS36MG49vCwcAYzTrO+VMVLeqpncI8te8lmthFEaiGZSJIockh1/go4Kq9T1Zo3sXLNmkmMJ98ES4X3xSZmGdi+6cQvk0KHzQiopxXwt+4LTnxrg7yKyaB+rGjiml4/svhhw+WuVeIpYUy0sCXdOyimIrHA6gIDCn9skkoXBwm4vqmp0hesd5OWbybLUkLXqdNvpHwEGAFF5LN7MtGGKAAAAAElFTkSuQmCC'></image>
+        </view>
+        <view class='skin-des'>{{item.text}}</view>
+        <text wx:if="{{currentItem==item.class ? true :false}}">正在使用</text>
+      </view>
+  </view>
+</view>
+<!--背景  -->
+<view class='page__bg'></view>
+</view>

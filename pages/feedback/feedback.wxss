@@ -1,0 +1,19 @@
+@import '../../style/aboutLogin.wxss';
+@import '../../style/person.wxss';
+/*placeholder  */
+.input_placeholder{
+  color:#bcbdbf !important;
+  font-size: 0.8rem;
+}
+/*歌词  */
+.LyricsTextarea{
+  box-sizing: border-box;
+  width:100%;
+  max-height: 80vh;
+  background-color: rgba(0,0,0,0.01);
+  padding:37rpx 30rpx;
+}
+/* 提交按钮 */
+.feedback-sub{
+  margin-top: 20rpx;
+}

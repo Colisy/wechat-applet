@@ -1,0 +1,33 @@
+/* pages/myProFile/username.wxss */
+@import '../../style/person.wxss';
+/*背景  */
+.page__bg{
+  background-color: #eeeff1;
+}
+/*列表  */
+.list{
+  background: #fbfcfe;
+  border:0;
+}
+/*清除  */
+.weui-icon-clear{
+  top:0.5rem;
+  right:0.7rem;
+}
+/*icon  */
+.page__cd .list>image{
+  width:1rem;
+  height: 1rem;
+  float: left;
+  margin-top: 0.2rem;
+}
+/*input  */
+.page__cd .list input{
+  width:85%;
+}
+
+
+
+
+
+/*  */

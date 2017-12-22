@@ -1,0 +1,28 @@
+<!--pages/login/login.wxml-->
+<view class='page'>
+  <view class='page_content'>
+    <!--input  -->
+    <view class='inputBox'>
+      <view>
+        <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpBQTk0QkQzODIzMTFFNzExOUEyRkEzM0Y4RkZDNEY0OSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3QTA2MDI1OTgzQzExMUU3QTJCQkQ0RDRBMjNDQTg5MiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3QTA2MDI1ODgzQzExMUU3QTJCQkQ0RDRBMjNDQTg5MiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6N2M4MTkzMmQtYWUzMC1hMzQ4LTlkMTAtMjYzMTYzNDYxMDIxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkFBOTRCRDM4MjMxMUU3MTE5QTJGQTMzRjhGRkM0RjQ5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+c7CKdQAAAYRJREFUeNqk1M8rBGEcx/Fnd7GrsJtk/SgOblIKFyn/gSTlQHJTDgoRR/+AcnBQHPzM78OW3NbRSa3iun6VgxJtViIZ7yffrWenndlhn3o1z8zzPJ+ZZ+Z5RlmWpRyEMIQTPItj9KPIaZxTWC0OrN+SwIq4lGsbqPIaWIodGTiFGqOtHnPStomgl8BBI8xpBtPSZyBfYDFiOEeZS2AYN9hDwGzzq+wSQRMSSCvnkkIc7QibDf4cnfU1S+UvPqHcAvWdk2hFyCWsAt0yk9eslhzvZwSfGHN5hzP4ljWZ9yvrD7MvoROI2D7GrIRte1mHfjlW4xBfSMoN9EK/xhte8IhJ+1o0wxqwhh7jSfXW28WF0PU+dMpu0eUIUXtgJeLSoTfHVKLy1PbZjMsYvcfLzcBFaRg2pu3VqIydzwR2ybta+GOQaRlptOiTLdyjsYDAZjxhSZ88YLWAsIx1pPROCSKmCi9nKPHpVCqnuNMX/hn2jg606cBbKnUIePwpOP0oPnD1I8AAIQGcC1toORYAAAAASUVORK5CYII='></image>
+        <input value='{{username}}' auto-focus='true' focus='true' bindinput='username' placeholder-class='input_placeholder' number type='text' placeholder='请输入手机号' />
+        <view class="weui-icon-clear" wx:if="{{username.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <view>
+        <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAWCAYAAAAvg9c4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpBQTk0QkQzODIzMTFFNzExOUEyRkEzM0Y4RkZDNEY0OSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3QTY2NEMyQjgzQzExMUU3QTJCQkQ0RDRBMjNDQTg5MiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3QTY2NEMyQTgzQzExMUU3QTJCQkQ0RDRBMjNDQTg5MiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6N2M4MTkzMmQtYWUzMC1hMzQ4LTlkMTAtMjYzMTYzNDYxMDIxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkFBOTRCRDM4MjMxMUU3MTE5QTJGQTMzRjhGRkM0RjQ5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+iVwA5wAAAaJJREFUeNqs1LFKA0EQBuC9zeklKkQRO0FRlKCFPoClYCOChbWFYJkHiFVKsRLfwErQzkawsYid2ljYpFCijQhGQWNMvPUfmcB45Pb2xIGPXO42k93ZnVPGGCX4UIQ6NOHNogEtOIYpmcdXv2MGitALB1AFj8kIoR9WYBkqsN15GE1KA/NwCBvQVvY4hyMYkjd1ZFCb7904JFS8kmcwtqSKB/TFPIvGMIzwClXc8rvVzxb3sMNliE3ahC8WOiS9hVJ0rC8+s5Dj5dPuDzjOOhQrpH1oeDhX07hYh3kYg1l4hGvoSVEOWl0N9inpKS4W4R2u4JVnHER3NSHhKEz81Jm74wnWIMtdFfC1FFju028KcGa4rT7gMtKuf1WiSWrLeZVBtS5zS9pq3KKN01w3GpixDF6ALdiEQcs4yuFpx43Q/IPA5TS4JjXs0+VE+PzPJqGDKlzTC3hJOFrGl18S2rHssCLKpzUvaRxWO4Xmh1JG1LXbM4pJbqIcddQJLpagDnfibaVS1jvPk6vRP+3y+3AOCmJQmtBcwgfYo5mq/45vAQYA88YlM2pszY8AAAAASUVORK5CYII='></image>
+        <input value='{{password}}' bindinput='password' placeholder-class='input_placeholder' type='text' password placeholder='请设置登录密码，不少于6位' />
+        <view class="weui-icon-clear" wx:if="{{password.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+    </view>
+    <!--登录按钮  -->
+    <button class="weui-btn submit" bindtap='verifyCode'>下一步</button>
+  </view>
+  <!--微信登录  -->
+  <include wx:if='{{isShow}}' src="../fourIcon/fourIcon.wxml" />
+  <!--背景  -->
+  <view class='page_pg'></view>
+</view>

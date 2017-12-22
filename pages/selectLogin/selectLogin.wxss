@@ -1,0 +1,27 @@
+/* pages/selectLogin/selectLogin.wxss */
+/*button_hover_class  */
+@import '../../style/aboutLogin.wxss';
+/*外层  */
+.page_content {
+  text-align: center;
+}
+/* logo */
+.logo {
+  width: 13rem;
+  height: 4rem;
+}
+.logoOuter {
+  margin: 4rem auto 2rem;
+}
+/*按钮  */
+.phoneLogin {
+  width: 80%;
+  border-radius:30px;
+}
+button[plain] {
+  border: 1px solid #fff;
+  color:#fff;
+}
+
+
+/*  */

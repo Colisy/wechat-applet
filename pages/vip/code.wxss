@@ -1,0 +1,22 @@
+@import '../../style/aboutLogin.wxss';
+@import '../../style/person.wxss';
+.activeCode .tips{
+  color:#333;
+}
+.activeCode .inputBox>view input{
+  color:#333;
+  border-bottom:1px solid #dedede;
+  width:100% !important;
+  left:0;
+}
+.input_placeholder{
+  color:#dedede;
+}
+
+
+
+
+
+
+
+/*  */

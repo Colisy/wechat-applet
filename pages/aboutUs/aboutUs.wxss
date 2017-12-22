@@ -1,0 +1,41 @@
+@import '../../style/person.wxss';
+/*文案  */
+.copy{
+  text-align: center;
+  padding:0.5rem 1rem;
+  font-size:0.6rem;
+  color:#8d8e90;
+}
+/*条款  */
+.terms{
+  font-size:0.8rem;
+  color:#647589;
+  text-align: center;
+  margin-top: 3rem;
+}
+.terms text{
+  text-decoration: underline;
+}
+/*文字  */
+.list text{
+  float:right;
+  color:#999a9c;
+}
+/*头部  */
+.page__hd{
+  height:8rem;
+  text-align: center;
+}
+.page__hd image{
+  width:4rem;
+  height: 4rem;
+  margin-top:1.8rem;
+}
+/*列表  */
+.list{
+  background-color: #fbfcfe;
+}
+/* 背景 */
+ .page__bg{
+  background-color: #eeeff1;
+}

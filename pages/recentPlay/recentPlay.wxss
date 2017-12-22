@@ -1,0 +1,50 @@
+@import '../../style/aboutLogin.wxss';
+@import '../../style/person.wxss';
+@import '../select/select.wxss';
+@import '../home/home.wxss';
+.listItems{
+  padding:0.3rem 1rem;
+}
+.itemTitle>image{
+  width:37rpx;
+  height: 37rpx;
+  margin: 0;
+  position: relative;
+  top:0.1rem;
+}
+.itemTitle>label{
+  font-size: 32rpx;
+}
+.list-children{
+  position: absolute;
+  width:100%;
+   background-color: #fbfcfe; 
+  height: 100%;
+  box-sizing: border-box;
+  top:0;
+  padding:0.3rem 1rem;
+  left:0;
+  z-index:3;
+}
+/*刪除按鈕  */
+.list-t-c{
+  height: 100%;
+  box-sizing: border-box;
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:1;
+  width:140rpx;
+  color:#fff;
+  text-align: center;
+  padding-top: 3%;
+  background-color: #E7413E;
+}
+
+
+
+
+
+
+
+/*  */

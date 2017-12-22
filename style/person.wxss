@@ -1,0 +1,315 @@
+/* pages/personCenter/personCenter.wxss */
+
+/*header  */
+.page__hd {
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  padding-top: 0.8rem;
+  color: #37383a;
+  position: relative;
+}
+
+.immedate[type="primary"][plain] {
+  border: 1px solid #c7c8ca;
+  color: #37383a;
+  width: 80%;
+  padding: 0;
+  margin-bottom: 1.8rem;
+  line-height: 2rem;
+  margin-top: 1.3rem;
+  font-size: 0.85rem;
+}
+
+/*背景  */
+
+.page__bg, .page__dark {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fbfcfe;
+  z-index: 1;
+}
+
+/*遮罩  */
+
+.page__dark {
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*内容  */
+
+.page__cd {
+  position: relative;
+  z-index: 2;
+}
+
+/*列表  */
+
+.list {
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: #37383a;
+  position: relative;
+  border-bottom: 1px solid #e1e2e4;
+}
+
+.list label {
+  margin-left: 12rpx;
+}
+
+/*灰色下划线  */
+
+.border_botom {
+  border-bottom: 0.5rem solid #eeeff1;
+}
+
+/*去掉下面padding  */
+
+.padding-bottom-none {
+  padding-bottom: 0;
+}
+
+/*去掉下划线  */
+
+.border-none {
+  border-bottom: none;
+}
+
+/*灰色上划线  */
+
+.border_top {
+  border-top: 0.5rem solid #eeeff1;
+}
+
+/*左边小图标  */
+
+.list image {
+  width: 1rem;
+  height: 0.8rem;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 0.08rem;
+}
+
+.list .set {
+  height: 1rem;
+}
+
+.list .share {
+  width: 0.9rem;
+  height: 1rem;
+}
+
+/*list 右边的字  */
+
+.list .rightAnsMore {
+  margin-right: 50rpx;
+}
+
+/*更多icon  */
+
+.list ._more {
+  width: 0.5rem;
+  position: absolute;
+  height: 1rem;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.list ._more2 {
+  width: 1rem;
+}
+.list ._more3{
+  width:1.8rem;
+}
+/*退出登录  */
+
+.outerIn {
+  text-align: center;
+  color: #ff5045;
+  padding: 0;
+  background-color: transparent;
+}
+
+/*用户基本信息  */
+
+.userInfoma {
+  border-bottom: 1px solid #e2e3e5;
+  text-align: left;
+  font-size: 0.85rem;
+  padding: 0 0.8rem 0.8rem;
+  color: #37383a;
+}
+
+.userInfoma image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  /* float: left; */
+  margin-right: 0.8rem;
+}
+
+.userInfoma>view {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 0.5rem;
+}
+
+/* 下载 */
+
+.dynamics {
+  display: flex;
+  text-align: center;
+}
+
+.dynamics>view {
+  flex: 1;
+}
+
+.dynamics>view view {
+  color: #484848;
+  font-size: 29rpx;
+}
+
+.dynamics>view image {
+  width: 88rpx;
+  margin-left: 15rpx;
+  height: 71rpx;
+}
+
+/*等级  */
+
+.grade {
+  font-family: "幼圆";
+  display: block;
+  font-size: 0.6rem;
+  width: 1.5rem;
+  height: 0.7rem;
+  text-align: center;
+  margin-top: 0.2rem;
+  color: #ffae08;
+}
+
+.grade>image {
+  width: 0.65rem;
+  height: 0.65rem;
+  margin: 0;
+}
+
+.grade>b {
+  font-weight: bold;
+}
+
+.userInfoma>.vipTile {
+  color: #ff5045;
+  font-size: 28rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*个性换肤  */
+
+.list .changeSkin {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.list text {
+  float: right;
+  color: #b3b3b5;
+}
+
+/*vip  */
+
+.dynamics>view .v-v {
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #ff5045;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  margin-left: 20rpx;
+  margin-bottom: 28rpx;
+}
+
+.dynamics>view .v-v image {
+  position: absolute;
+  top: 50%;
+  left: 5rpx;
+  /* transform: translateX(50%); */
+  transform: translateY(-50%);
+}
+
+/*red  */
+
+.red {
+  color: #ff5045;
+}
+
+.underline {
+  color: #adadad;
+  text-decoration: line-through;
+}
+
+/* 按钮 */
+
+.miniBtn {
+  float: right;
+  background: #ff5045;
+  color: #fff;
+  border: none;
+}
+
+/*提示框  */
+
+.tipsDark {
+  position: fixed;
+  top: 20%;
+  left: 9%;
+  width: 610rpx;
+  height: 520rpx;
+  z-index: 4;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 90rpx 100rpx;
+}
+
+.tipsDark .label {
+  width: 48rpx;
+  height: 48rpx;
+  display: inline-block;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 50rpx;
+  text-align: center;
+  position: relative !important;
+  top:-10rpx;
+  border: 1px solid #c7c8ca !important;
+}
+
+.tipsDark input {
+  width: 115rpx;
+  display: inline-block;
+  height: 46rpx;
+  font-size: 20rpx;
+  padding: 0;
+  margin: 0;
+  padding-left: 10rpx;
+  min-height: 1rpx;
+  line-height: 46rpx;
+  border-top: 1px solid #c7c8ca !important;
+  border-bottom: 1px solid #c7c8ca !important;
+}
+
+/*  */

@@ -1,0 +1,50 @@
+<!--selectBar  -->
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <view bindtap='selectResult' class='weui_select'>
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      </view>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索歌曲、MV、用户名" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" placeholder-class="placeholder" bindconfirm='selectResult' />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text">搜索</view>
+    </label>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
+<!--hot select  -->
+<view class="hotSelect" wx:if='{{!isShowResult}}'>
+  <block>
+    <text>热门搜索：</text>
+  </block>
+  <view>
+    <button plain="true" class="weui-btn mini-btn" type="default" size="mini" bindtap='selectshuang'>支爽</button>
+    <button plain="true" class="weui-btn mini-btn" type="default" size="mini" bindtap='selectya'>莉娅</button>
+    <button plain="true" class="weui-btn mini-btn" type="default" size="mini" bindtap='selectzhu'>飞猪侠</button>
+  </view>
+</view>
+<!--搜索结果  -->
+<view class='selectResult' wx:if="{{isShowResult}}">
+  <!--有结果  -->
+  <view wx:if='{{hasResult}}'>
+    <!--loadmore  -->
+    <scroll-view style="height:28rem" scroll-y="true" bindscrolltolower="mvLower">
+      <view class='selectItem' wx:for='{{songResultLists}}' wx:key="*this" id='{{item.id}}' bindtap='gotoPlayControlle'>
+        <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAoCAYAAACFFRgXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjEyNTI1OEZGQjkyRDExRTdBRkQ3ODM2OTNGMEZFMjZGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjEyNTI1OTAwQjkyRDExRTdBRkQ3ODM2OTNGMEZFMjZGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTI1MjU4RkRCOTJEMTFFN0FGRDc4MzY5M0YwRkUyNkYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTI1MjU4RkVCOTJEMTFFN0FGRDc4MzY5M0YwRkUyNkYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7xkyYtAAAClElEQVR42uyYy08TURTGO5NJqhI3xlbiAokNaty2EelfwCO6cFG1hD8AtyxMl67QuHNFdGkshRg3JDwS1kCILNCdYqLGqIAQoxs1on5Hv8Gxz+GeMlOTOcmX05k5c+fXc+4987BiIVuxWIzDnaK66M/QH4LeQI+gm/l8/qMVEJQN11EFSLZPQLaPYZ5B3U6TwY5UAXKzd6DGadvQmkfPPfoJDUG3OUbBUQJKhS5x0G6ovQ7UkzIoydgayrzd4DJ3cJ2DMiWgi44C9jjcQ6jHA7VsCNXI7hG40zKEbYNbgU5Dc9B1QK3u8zqQ6REzzfA1ws5DA4DdCaqr2Ibn5ehvBAmrAT5L/zjovm0KLA09hux++V+AQ7MIOAKOgCPgCDgCjoBbypywAfiCehm6Cp2HEtAmtASNQxN4yPrREsCAPQk3CaXLDgn0BWoEcbnQpwRhFwn7ChrmK3+cfpj704yrzPBey6OcBhNQEpqVNxiM+9kT8hoaQ9wDVqC3IsP8x/LWW2QpEmXlkf3LjNPaFSgDvZQElcHuGvfnGPcX2LQ8ChuiHwXUp3qBhL61OyU05VFYhn7GZ/y0N8PG5VHYUfp1n/Hv6XdsTXkU9oH+mM949xPYhq0pj8LczwN9PuPdabhqK8rzXQF8n76AtXG4QQuU4wX3PFtRnk0FcIlZ7pSFXAua+ycZJ/Elhz96WZ67eymPKa3cfAAji32B4z3F9iin2zqT18/MSlvdkOYg59ma8mgmMS7+Ai4b+/MVVKDG2EK/uq2U++V4lvG/25pxebQrjxDn5Cc0Bb2FvkHvuD0ox11YMYswKZYnyTtao/JkvYMEaZYngyne8dJ14ld4cwkF9h/gKk9raba8Lc8UKDXjaU1jvwQYAJl/B7ohtMFaAAAAAElFTkSuQmCC'></image>
+        <text>{{item.title}}</text>
+        <view>{{item.nickname}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!--没有结果  -->
+  <view class='noReault' wx:if='{{!hasResult}}'>
+    <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkVENDM4NTY3QjkzNDExRTc4RjJBQTNFMDZEMUUyRTY4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkVENDM4NTY4QjkzNDExRTc4RjJBQTNFMDZEMUUyRTY4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RUQ0Mzg1NjVCOTM0MTFFNzhGMkFBM0UwNkQxRTJFNjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RUQ0Mzg1NjZCOTM0MTFFNzhGMkFBM0UwNkQxRTJFNjgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6Pl9qjAAACQUlEQVR42qRW2Y7CMAx0SrlvcQkJCZ74/z/iASQucd9nNhPWVVrS0mUjVQ1pMvbYYwchpaSosdvt5Pl8puv1Srw3kUhQKpWiWq0m6MMQYQYWi4Vcr9cE8OfzqcGFeOHxHIby+TxVq1UqlUoitoHBYCD3+70PLDj3gag1xYba7baINLDZbOR4PNbh4IP8Pc5csaBeryesBpTHcjgc0v1+p/+MYrHoM+LwZDabWcFNhp8E8SsKmk6n0mdgPp/Lw+FgPYBEmrE2h+M4YQLREfEMrFYrq+etVou63S4lk0n9mxngncvlEAqq1+tvDB+PB22325cTSCwn1dwIUEjQdV39hvfMAG8kFOwQc2ZiMmQVOqfT6S222Agv8GDcbrc3hryGvKFObN8VC+lyhQbji0OTyURXLPITlOVyudQgcNBkzjjsoGsD57XL5aKfIH02wnG2iQBzsLPKwFat3wzgOGFSi6qDsNoI5hIicNLpdCRAkHbYWnAOx6FEN5vNejG1AUCmkCT2YY59iO3xeNQ5sCkII5PJUKFQEK7SsVBFY61kaBwFBTC0AAYDdRhsNptokPp70Ek45TU71fflaDTSALxRWfcKJizpWMc+yBX3Bg+Evd/vC69VVCoVoR5fiHAIrKIUBUdMZny20WjQWzftdDoIlfeB20ccFZmtBuDqhhOhNxpuM3j1TS0gJ6pBio9XJvo5Wi73ok8DMQc4Qh370kc/BxM8yId58f9WqJYi1KJatvjzv4qgMbOjArxcLseK4Y8AAwCXHas3vMuG0QAAAABJRU5ErkJggg=='></image>
+    <view class='no_result'>无匹配</view>
+    <view>很抱歉，没有找到与"{{inputVal}}"相关的结果</view>
+  </view>
+</view>

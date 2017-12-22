@@ -1,0 +1,63 @@
+/* pages/vip/vip.wxss */
+@import '../../style/person.wxss';
+.vip-head{
+  height: 97rpx;
+  padding-top: 0;
+  line-height: 97rpx;
+}
+.vip-head>image{
+  width: 23rpx;
+  height: 21rpx;
+}
+/*vip特权  */
+.privilege{
+  height:300rpx;
+}
+.privilege view:first-of-type,.buys view:first-of-type{
+  color:#000;
+  font-weight: bold;
+}
+.pri-logo{
+  margin-top: 38rpx;
+}
+/*vip购买  */
+.tipsDark view:nth-of-type(2){
+  margin-top: 58rpx;
+}
+.tipsDark view:nth-of-type(3){
+  margin-top: 8rpx;
+}
+.tipsDark view>text{
+  position: relative;
+  top:-10rpx;
+}
+.tipsDark view label{
+  margin-left: 10rpx;
+  font-size:0.9rem;
+}
+/*立即开通  */
+.tipsDark #_immediate{
+  width:100%;
+  border:0 !important;
+  height: 75rpx !important;
+  background-color: #ff5045 !important;
+  border-radius:30px !important;
+  color:#fff !important;
+  text-align: center !important;
+  font-size: 28rpx !important;
+  line-height: 75rpx !important;
+  margin-top: 40rpx !important;
+}
+/*激活码  */
+.activeCode ._more{
+  right:1.5rem;
+}
+
+
+
+
+
+
+
+
+/*  */
